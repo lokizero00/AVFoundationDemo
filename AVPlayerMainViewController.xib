@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AVPlayerMainViewController" customModule="AVFoundationDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDF-4Q-Omt">
+                    <rect key="frame" x="50" y="318" width="275" height="30"/>
+                    <color key="backgroundColor" red="0.40265357460000001" green="0.40424391500000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="iam-73-GLL"/>
+                    </constraints>
+                    <state key="normal" title="系统播放器模式">
+                        <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="videoPlayer1Clicked:" destination="-1" eventType="touchUpInside" id="j3H-Vw-oQb"/>
+                    </connections>
+                </button>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvt-en-XwF">
+                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="uhU-tJ-q9f"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="AVPlayer演示" id="RXG-zN-0ZU">
+                            <barButtonItem key="leftBarButtonItem" title="back" id="9oD-ho-Ybn">
+                                <connections>
+                                    <action selector="backClicked:" destination="-1" id="Oxk-de-F3p"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBz-1M-A9s">
+                    <rect key="frame" x="50" y="368" width="275" height="30"/>
+                    <color key="backgroundColor" red="0.40265357460000001" green="0.40424391500000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ecj-oR-fAt"/>
+                    </constraints>
+                    <state key="normal" title="自定义播放器模式">
+                        <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="videoPlayer2Clicked:" destination="-1" eventType="touchUpInside" id="nRL-TG-8K2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cvt-en-XwF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NZh-4P-Sci"/>
+                <constraint firstItem="kDF-4Q-Omt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="ide-14-hXd"/>
+                <constraint firstItem="RBz-1M-A9s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="jfD-tC-QWq"/>
+                <constraint firstItem="RBz-1M-A9s" firstAttribute="top" secondItem="kDF-4Q-Omt" secondAttribute="bottom" constant="20" id="kVC-4Q-NqR"/>
+                <constraint firstAttribute="trailing" secondItem="RBz-1M-A9s" secondAttribute="trailing" constant="50" id="m0b-M5-LOM"/>
+                <constraint firstAttribute="trailing" secondItem="cvt-en-XwF" secondAttribute="trailing" id="sqZ-xQ-nH1"/>
+                <constraint firstItem="cvt-en-XwF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="sys-rS-hl5"/>
+                <constraint firstAttribute="trailing" secondItem="kDF-4Q-Omt" secondAttribute="trailing" constant="50" id="xit-RA-5LC"/>
+                <constraint firstItem="kDF-4Q-Omt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="zTk-rA-hHU"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
