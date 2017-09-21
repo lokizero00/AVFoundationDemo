@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func systemSound(){
+    @objc func systemSound(){
         var soundID:SystemSoundID=0
         let path=Bundle.main.path(forResource: "shake", ofType: "caf")
         
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         AudioServicesPlaySystemSound(soundID)
     }
     
-    func systemAlert(){
+    @objc func systemAlert(){
         var soundID:SystemSoundID=0
         let path=Bundle.main.path(forResource: "shake", ofType: "caf")
         
@@ -71,13 +71,13 @@ class ViewController: UIViewController {
         
     }
     
-    func systemVibration(){
+    @objc func systemVibration(){
         let soundID=SystemSoundID(kSystemSoundID_Vibrate)
         
         AudioServicesPlaySystemSound(soundID)
     }
     
-    func audioPlay(){
+    @objc func audioPlay(){
         if audioPlayer.isPlaying {
             return
         }
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         
     }
     
-    func audioPause(sender:UIButton){
+    @objc func audioPause(sender:UIButton){
         let title=sender.title(for: .normal)
         if title == "Pause" && audioPlayer.isPlaying {
             audioPlayer.pause()
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func audioStop(){
+    @objc func audioStop(){
         if audioPlayer.isPlaying {
             audioPlayer.stop()
             audioPlayer.currentTime=0
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func sliderSoundValueChanged(sender:UISlider){
+    @objc func sliderSoundValueChanged(sender:UISlider){
         audioPlayer.volume=sender.value
         currentSoundLabel.text="\(sender.value)"
     }
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
         audioPlayer.prepareToPlay()
     }
     
-    func updateTime(){
+    @objc func updateTime(){
         let cuTime:Float=Float(audioPlayer.currentTime)
         
         sliderMusic.value=cuTime
@@ -153,7 +153,7 @@ class ViewController: UIViewController {
         allTimeLabel.text=NSString(format: "%.2d:%.2d:%.2d", hour2,minute2,second2) as String
     }
     
-    func sliderMusicValueChanged(sender:UISlider){
+    @objc func sliderMusicValueChanged(sender:UISlider){
         audioPlayer.currentTime=TimeInterval(sender.value)
         audioPlayer.play()
     }

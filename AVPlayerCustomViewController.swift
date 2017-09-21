@@ -51,7 +51,7 @@ class AVPlayerCustomViewController: UIViewController {
         //创建视频播放器图层对象
         let playerLayer=AVPlayerLayer(player: player)
         playerLayer.frame=containerView.bounds
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill //视频填充模式
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill //视频填充模式
         containerView.layer.addSublayer(playerLayer)
         
         addProgressObserver()
@@ -97,7 +97,7 @@ class AVPlayerCustomViewController: UIViewController {
     }
     
     //点击播放/暂停按钮
-    func playOrPauseButtonClicked(button:UIButton){
+    @objc func playOrPauseButtonClicked(button:UIButton){
         if let player=player{
             if player.rate==0{  //点击时已暂停
                 button.setImage(UIImage(named:"pause"), for: .normal)
@@ -110,7 +110,7 @@ class AVPlayerCustomViewController: UIViewController {
     }
     
     //播放结束，回到最开始位置，播放按钮显示带播放图标
-    func playItemDidReachEnd(notification:Notification){
+    @objc func playItemDidReachEnd(notification:Notification){
         player?.seek(to: kCMTimeZero, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
         progress.progress=0.0
         playOrPauseButton.setImage(UIImage(named:"play"), for: .normal)

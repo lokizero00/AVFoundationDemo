@@ -41,7 +41,7 @@ class AVAudioRecorderViewController: UIViewController ,AVAudioRecorderDelegate{
         playRecordButton.addTarget(self, action: #selector(self.playAction), for: .touchUpInside)
     }
     
-    func playAction(){
+    @objc func playAction(){
         player=nil
         do{
             player=try AVAudioPlayer(contentsOf: URL(fileURLWithPath: aacPath!))
@@ -56,7 +56,7 @@ class AVAudioRecorderViewController: UIViewController ,AVAudioRecorderDelegate{
         }
     }
     
-    func downRecordAction(){
+    @objc func downRecordAction(){
         //初始化录音器
         do{
             recorder=try AVAudioRecorder(url: URL(fileURLWithPath:aacPath!), settings: recorderSettingsDic!)
@@ -76,7 +76,7 @@ class AVAudioRecorderViewController: UIViewController ,AVAudioRecorderDelegate{
         }
     }
     
-    func downRecordRelease(){
+    @objc func downRecordRelease(){
         //停止录音
         recorder?.stop()
         //录制器释放
@@ -90,7 +90,7 @@ class AVAudioRecorderViewController: UIViewController ,AVAudioRecorderDelegate{
     }
     
     //更新音量指示器
-    func levelTimer(){
+    @objc func levelTimer(){
         recorder?.updateMeters()    //刷新音量数据
 //        let averageV:Float=recorder!.averagePower(forChannel: 0)    //获取音量的平均值
         
